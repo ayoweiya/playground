@@ -1,5 +1,4 @@
 
-import javax.swing.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -24,6 +23,14 @@ public class main {
         String citiesCommaSeparaedUpper = cities.stream().map(String ::toUpperCase).collect(Collectors.joining(","));
         System.out.println(citiesCommaSeparaedUpper);
 
+        //過濾有equals的
+        String check = "application/pdf";
+        List<String> list = Arrays.asList("image/png", "application/pdf", "image/jpeg", "image/jpg");
+        list = list.stream()
+                .filter(aa -> check.equals(aa))
+                .collect(Collectors.toList());
+
+        System.out.println(list.isEmpty());
         //
         Double f = 80.00;
         System.out.println("轉前: " + f.toString());//1.0
@@ -57,7 +64,6 @@ public class main {
         b = 10;
         System.out.println("a = "+a);
         System.out.println("b =" + b);
-
     }
 
     public static String subZeroAndDot(String s){
