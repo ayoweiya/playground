@@ -24,13 +24,13 @@ public class main {
         System.out.println(citiesCommaSeparaedUpper);
 
         //過濾有equals的
-        String check = "application/pdf";
-        List<String> list = Arrays.asList("image/png", "application/pdf", "image/jpeg", "image/jpg");
+        String check = "application/pdfx";
+        List<String> list = Arrays.asList("image/png,application/pdf,image/jpeg,image/jpg,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/csv".split("\\,"));
         list = list.stream()
                 .filter(aa -> check.equals(aa))
                 .collect(Collectors.toList());
 
-        System.out.println(list.isEmpty());
+        System.out.println((list.isEmpty() ?"格式不符":"符合格式"));
         //
         Double f = 80.00;
         System.out.println("轉前: " + f.toString());//1.0
